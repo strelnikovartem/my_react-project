@@ -1,8 +1,18 @@
 import "./style.css";
-function sum(a: number, b: number) {
-  return a + b;
+interface User {
+  id: number;
+  name: string;
 }
 
-const result = sum(5, 10); // ✅ TypeScript виведе тип як number
+const getUserNames = (users: User[]): string[] => {
+  return users.map((user) => user.name);
+};
 
-console.log(result);
+const userList: User[] = [
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" },
+  { id: 3, name: "Charlie" },
+];
+
+const names = getUserNames(userList);
+console.log(names); // ['Alice', 'Bob', 'Charlie']
