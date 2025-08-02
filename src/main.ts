@@ -16,3 +16,15 @@ const userList: User[] = [
 
 const names = getUserNames(userList);
 console.log(names); // ['Alice', 'Bob', 'Charlie']
+
+interface Order {
+  username: string;
+  email: string;
+  total: number;
+}
+
+const order1: Order = {
+  username: "string",
+  email: "dd@mail.com",
+  total: 2,
+};
