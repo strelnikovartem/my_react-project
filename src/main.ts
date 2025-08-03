@@ -1,6 +1,6 @@
-function myFunction<T>(value: T): T {
-  return value;
+function getFirstElement<T>(arr: T[]): T {
+  return arr[0];
 }
 
-console.log(myFunction<string>("Hello")); // "Hello"
-console.log(myFunction<number>(42)); // 42
+console.log(getFirstElement<number>([10, 20, 30])); // "Hello"
+console.log(getFirstElement<string>(["Alice", "Bob"])); // 42
