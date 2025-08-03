@@ -1,4 +1,11 @@
-const jacob = {
+interface User {
+  username: string;
+  greet: (m: string) => void;
+}
+
+const jacob: User = {
   username: "Jacob",
-  greed() {},
+  greet(message) {
+    console.log(message);
+  },
 };
