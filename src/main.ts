@@ -11,12 +11,17 @@ const allPlayers: Players[] = [
 
 interface Platform {
   getOnlinePlayers: (players: Players[]) => Players[];
+  getPlayersName: (players: Players[]) => string[];
 }
 
 const gamingPlatform: Platform = {
   getOnlinePlayers: (players) => {
     return players.filter((player) => player.isOnlain);
   },
+  getPlayersName: (players) => {
+    return players.map((player) => player.username);
+  },
 };
 
 console.log(gamingPlatform.getOnlinePlayers(allPlayers));
+console.log(gamingPlatform.getPlayersName(allPlayers));
