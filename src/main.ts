@@ -9,3 +9,19 @@
 //     console.log(message);
 //   },
 // };
+
+interface Players {
+    username: string;
+    isOnlain: boolean;
+
+}
+
+const allPlayers: Players[] = [{username:'poly', isOnlain: true}];
+
+interface Platform {
+
+}
+
+const gamingPlatform = {
+  getOnlinePlayers (players) => {},
+};
