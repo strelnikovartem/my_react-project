@@ -1,27 +1,22 @@
-// interface User {
-//   username: string;
-//   greet: (message: string) => void;
-// }
-
-// const jacob: User = {
-//   username: "Jacob",
-//   greet(message) {
-//     console.log(message);
-//   },
-// };
-
 interface Players {
-    username: string;
-    isOnlain: boolean;
-
+  username: string;
+  isOnlain: boolean;
 }
 
-const allPlayers: Players[] = [{username:'poly', isOnlain: true}];
+const allPlayers: Players[] = [
+  { username: "poly", isOnlain: true },
+  { username: "jacob", isOnlain: false },
+  { username: "adrian", isOnlain: true },
+];
 
 interface Platform {
-
+  getOnlinePlayers: (players: Players[]) => Players[];
 }
 
-const gamingPlatform = {
-  getOnlinePlayers (players) => {},
+const gamingPlatform: Platform = {
+  getOnlinePlayers: (players) => {
+    return players.filter((player) => player.isOnlain);
+  },
 };
+
+console.log(gamingPlatform.getOnlinePlayers(allPlayers));
